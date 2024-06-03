@@ -1,4 +1,4 @@
-NAME		:= ex00
+NAME		:= ex02
 
 
 SRC_DIR			= ./src/
@@ -7,7 +7,7 @@ SRC_FILES		= $(addprefix $(SRC_DIR), $(SRC))
 
 OBJ_PATH 		= ./obj/
 OBJ				= $(SRC:.cpp=.o)
-OBJECT_FILES	= $(addprefix $(OBJ_PATH), $(OBJ))
+OBJ_FILES	= $(addprefix $(OBJ_PATH), $(OBJ))
 
 # General purpose
 COMPILE		:= c++
@@ -27,11 +27,11 @@ $(NAME):		$(SRC_FILES)
 				@$(COMPILE) $(FLAGS) -c $(SRC_FILES)
 				@mkdir -p obj
 				@mv $(OBJ) $(OBJ_PATH)
-				@$(COMPILE) $(FLAGS) $(OBJECT_FILES) -o $(NAME)
+				@$(COMPILE) $(FLAGS) $(OBJ_FILES) -o $(NAME)
 				@echo "$(NAME) compiled successfully!"
 
 clean:
-				@$(RM) $(OBJECT_FILES)
+				@$(RM) $(OBJ_FILES)
 				@$(RM) $(OBJ_PATH)
 				@echo "$(RED)The object files from $(NAME) were sucessfully removed!$(OFF)"
 
