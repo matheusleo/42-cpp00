@@ -1,5 +1,4 @@
-NAME		:= ex00
-
+NAME		:= megaphone
 
 SRC_DIR			= ./src/
 SRC				=	*.cpp
@@ -25,10 +24,11 @@ all:			$(NAME)
 
 $(NAME):		$(SRC_FILES)
 				@$(COMPILE) $(FLAGS) -c $(SRC_FILES)
+				@echo "$(GREEN)Object files created!$(OFF)"
 				@mkdir -p obj
 				@mv $(OBJ) $(OBJ_PATH)
 				@$(COMPILE) $(FLAGS) $(OBJ_FILES) -o $(NAME)
-				@echo "$(NAME) compiled successfully!"
+				@echo "$(GREEN)$(NAME) compiled successfully!"
 
 clean:
 				@$(RM) $(OBJ_FILES)

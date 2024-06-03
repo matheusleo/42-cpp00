@@ -1,9 +1,11 @@
-#include <iostream> 
+#include <iostream>
 #include <cctype>
+
+typedef unsigned long int ulong;
 
 void toUpper(std::string str)
 {
-    for (long unsigned int i = 0; i < str.length(); i++)
+    for (ulong i = 0; i < str.length(); i++)
         str[i] = std::toupper(str[i]);
     std::cout << str;
 }
