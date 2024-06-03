@@ -1,12 +1,17 @@
-NAME		:= ex01
+NAME		:= phonebook
 
-SRC_DIR			= ./src/
-SRC				=	*.cpp
-SRC_FILES		= $(addprefix $(SRC_DIR), $(SRC))
+INCLUDES_DIR 		:= ./includes/
+INCLUDES 			:= -I includes
+HEADERS				:= *.hpp
+HEADERS_FILES		:= $(addprefix $(INCLUDES_DIR), $(HEADERS))
 
-OBJ_PATH 		= ./obj/
-OBJ				= $(SRC:.cpp=.o)
-OBJ_FILES	= $(addprefix $(OBJ_PATH), $(OBJ))
+SRC_DIR		:= ./src/
+SRC			:=	*.cpp
+SRC_FILES	:= $(addprefix $(SRC_DIR), $(SRC))
+
+OBJ_PATH 	:= ./obj/
+OBJ			:= $(SRC:.cpp=.o)
+OBJ_FILES	:= $(addprefix $(OBJ_PATH), $(OBJ))
 
 # General purpose
 COMPILE		:= c++
@@ -22,13 +27,13 @@ BLUE			:= \033[0;34m
 # Rules
 all:			$(NAME)
 
-$(NAME):		$(SRC_FILES)
-				@$(COMPILE) $(FLAGS) -c $(SRC_FILES)
+$(NAME):		$(SRC_FILES) $(HEADERS_FILES)
+				@$(COMPILE) $(FLAGS) -c $(INCLUDES) $(SRC_FILES)
 				@echo "$(GREEN)Object files created!$(OFF)"
 				@mkdir -p obj
-				@mv $(OBJ) $(OBJ_PATH)
-				@$(COMPILE) $(FLAGS) $(OBJ_FILES) -o $(NAME)
-				@echo "$(GREEN)$(NAME) compiled successfully!"
+				mv $(OBJ) $(OBJ_PATH)
+# @$(COMPILE) $(FLAGS) $(OBJ_FILES) $(INCLUDES) -o $(NAME)
+# @echo "$(GREEN)$(NAME) compiled successfully!"
 
 clean:
 				@$(RM) $(OBJ_FILES)

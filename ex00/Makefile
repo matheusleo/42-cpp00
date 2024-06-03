@@ -1,12 +1,12 @@
 NAME		:= megaphone
 
-SRC_DIR			= ./src/
-SRC				=	*.cpp
-SRC_FILES		= $(addprefix $(SRC_DIR), $(SRC))
+SRC_DIR			:= ./src/
+SRC				:=	*.cpp
+SRC_FILES		:= $(addprefix $(SRC_DIR), $(SRC))
 
-OBJ_PATH 		= ./obj/
-OBJ				= $(SRC:.cpp=.o)
-OBJ_FILES	= $(addprefix $(OBJ_PATH), $(OBJ))
+OBJ_PATH 		:= ./obj/
+OBJ				:= $(SRC:.cpp=.o)
+OBJ_FILES		:= $(addprefix $(OBJ_PATH), $(OBJ))
 
 # General purpose
 COMPILE		:= c++
