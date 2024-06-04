@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:34:57 by mleonard          #+#    #+#             */
-/*   Updated: 2024/06/03 22:08:46 by mleonard         ###   ########.fr       */
+/*   Updated: 2024/06/03 23:00:54 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,13 @@ size_t Phonebook::length(void) const
 
 void Phonebook::displayContacts(void) const
 {
+    std::cout << "|----------+----------+----------+----------|" << std::endl;
     std::cout << "|";
     std::cout << std::setw(10) << std::right << "index" << "|";
     std::cout << std::setw(10) << std::right << "first name" << "|";
     std::cout << std::setw(10) << std::right << "last name" << "|";
-    std::cout << std::setw(10) << std::right << "nickname" << "|";
-    std::cout << std::endl;
+    std::cout << std::setw(10) << std::right << "nickname" << "|" << std::endl;
+    std::cout << "|----------+----------+----------+----------|" << std::endl;
 
     for (size_t i = 0; i < length(); i++)
     {
@@ -76,8 +77,8 @@ void Phonebook::displayContacts(void) const
         std::cout << std::setw(10) << std::right << i << "|";
         std::cout << std::setw(10) << std::right << firstName << "|";
         std::cout << std::setw(10) << std::right << lastName << "|";
-        std::cout << std::setw(10) << std::right << nickname << "|";
-        std::cout << std::endl;
+        std::cout << std::setw(10) << std::right << nickname << "|" << std::endl;
+        std::cout << "|----------+----------+----------+----------|" << std::endl;
     }
 }
 
