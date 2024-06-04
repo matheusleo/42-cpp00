@@ -31,9 +31,9 @@ $(NAME):		$(SRC_FILES) $(HEADERS_FILES)
 				@$(COMPILE) $(FLAGS) -c $(INCLUDES) $(SRC_FILES)
 				@echo "$(GREEN)Object files created!$(OFF)"
 				@mkdir -p obj
-				mv $(OBJ) $(OBJ_PATH)
-# @$(COMPILE) $(FLAGS) $(OBJ_FILES) $(INCLUDES) -o $(NAME)
-# @echo "$(GREEN)$(NAME) compiled successfully!"
+				@mv $(OBJ) $(OBJ_PATH)
+				@$(COMPILE) $(FLAGS) $(OBJ_FILES) $(INCLUDES) -o $(NAME)
+				@echo "$(GREEN)$(NAME) compiled successfully!"
 
 clean:
 				@$(RM) $(OBJ_FILES)
